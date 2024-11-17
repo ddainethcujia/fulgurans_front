@@ -1,0 +1,15 @@
+<form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="titulo">Título</label>
+      <input id="titulo" formControlName="titulo" type="text" />
+    </div>
+    <div>
+      <label for="texto">Texto</label>
+      <textarea id="texto" formControlName="texto"></textarea>
+    </div>
+    <div>
+      <label for="imagen">Imagen</label>
+      <input id="imagen" formControlName="imagen" type="file" />
+    </div>
+    <button type="submit">{{ isEditMode ? 'Actualizar' : 'Crear' }} Post</button>
+  </form>

@@ -1,0 +1,36 @@
+<div class="container" id="container" [class.active]="isSignUp">
+    <div class="form-container sign-up">
+      <form (ngSubmit)="onSignUp()">
+        <h1>Crea tu cuenta</h1>
+        <span>Usa tu correo institucional</span>
+        <input type="text" placeholder="Name" [(ngModel)]="signUpName" name="name" required>
+        <input type="email" placeholder="Email" [(ngModel)]="signUpEmail" name="email" required>
+        <input type="password" placeholder="Password" [(ngModel)]="signUpPassword" name="password" required>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+    <div class="form-container sign-in">
+      <form (ngSubmit)="onSignIn()">
+        <h1>FULGURANS</h1>
+        <span>Ingresa con tu correo institucional</span>
+        <input type="email" placeholder="Correo" [(ngModel)]="signInEmail" name="email" required>
+        <input type="password" placeholder="Contraseña" [(ngModel)]="signInPassword" name="password" required>
+        <a href="#">Olvidaste tu contraseña?</a>
+        <button type="submit">Sign In</button>
+      </form>
+    </div>
+    <div class="toggle-container">
+      <div class="toggle">
+        <div class="toggle-panel toggle-left">
+          <h1>¡Bienvenido!</h1>
+          <p>Si ya tienes una cuenta, ingresa aquí</p>
+          <button class="hidden" (click)="toggleForm()">Sign In</button>
+        </div>
+        <div class="toggle-panel toggle-right">
+          <h1>¿Nos visitas por primera vez?</h1>
+          <p>Regístrate con tus datos, usa tu correo institucional</p>
+          <button class="hidden" (click)="toggleForm()">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>

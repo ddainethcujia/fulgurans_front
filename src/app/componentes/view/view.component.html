@@ -1,0 +1,27 @@
+<div class="navbar">
+    <span class="username">Bienvenido!</span>
+    <ul class="nav-items">
+      <li routerLink="/feed">Feed</li>
+      <li routerLink="/myposts">Mis Post</li>
+      <li routerLink="/saved">Post Guardados</li>
+    </ul>
+    <button (click)="logout()">Cerrar Sesión</button>
+  </div>
+
+<button *ngIf="estado=='myposts'" (click)="crearPost()">Crear Post</button>
+  
+  <div class="posts-container">
+    <div class="post-card" *ngFor="let post of posts">
+      <div class="post-header">
+        <span class="post-text">{{post.nombreAutor}}</span>
+        <span class="post-heart" (click)="likePost(post)">❤️</span>
+      </div>
+      <h3 class="post-title">{{ post.titulo }}</h3>
+      <p class="post-content">{{ post.texto }}</p>
+      <div *ngIf="estado=='myposts'">
+        <button (click)="editarPost(post.id)">Editar</button>
+        <button (click)="eliminarPost(post.id)">Eliminar</button>
+    </div>
+    </div>
+    
+  </div>
